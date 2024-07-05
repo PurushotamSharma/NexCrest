@@ -1,0 +1,10 @@
+/* src/fonts.css */
+@font-face {
+    font-family: 'BlendingFont';
+    src: url('./fonts/Blending-rgjzK.otf') format('truetype'); /* Adjust the path and format according to your font file */
+  }
+  
+  body {
+    font-family: 'BlendingFont', sans-serif;
+  }
+  
