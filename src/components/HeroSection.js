@@ -79,10 +79,16 @@ const HeroSection = () => {
         </div>
       </header>
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between pt-20 pb-12">
-        <div className="md:w-1/2 px-4 mb-12 md:mb-0 text-center md:text-left">
+        <div className="md:w-1/2 px-4 mb-12 md:mb-0 text-center md:text-top">
+          <h2 className="text-2xl md:text-4xl font-bold mb-4">
+            <span className="text-fuchsia-600">YOUR</span>{" "}
+            <span className="text-blue-500">INNOVATION,</span>{" "}
+            <span className="text-green-500">OUR</span>{" "}
+            <span className="text-yellow-500">PROTECTION!</span>
+          </h2>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 transition duration-500 ease-in-out transform hover:scale-105">
             <span className="text-fuchsia-600">W</span>elcome to{" "}
-            <span className="text-white">Next</span>crest
+            <span className="text-white">Micro</span>vise
           </h1>
           <p className="text-lg mb-8 transition duration-500 ease-in-out transform hover:scale-105">
             Where we transform your digital aspirations into reality with our
@@ -92,13 +98,22 @@ const HeroSection = () => {
           </p>
 
           <a href="#" class="learn-more group">
-  <span class="button-text">Learn More</span>
-  <span class="arrow-icon">
-    <svg class="arrow-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M5 12h14M12 5l7 7-7 7"/>
-    </svg>
-  </span>
-</a>
+            <span class="button-text">Learn More</span>
+            <span class="arrow-icon">
+              <svg
+                class="arrow-icon-svg"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </span>
+          </a>
         </div>
         <div className="md:w-1/2 px-4">
           <Slider {...settings}>
@@ -116,7 +131,7 @@ const HeroSection = () => {
       </div>
       <div className="mt-12 pb-12">
         <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center transition duration-500 ease-in-out transform hover:scale-105">
-          Why Choose NextCrest
+          Why Choose Microvise
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
           <div className="flex items-center transition duration-500 ease-in-out transform hover:scale-105">

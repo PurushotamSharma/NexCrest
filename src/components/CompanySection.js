@@ -1,7 +1,7 @@
 import React from "react";
 import journey from "../assests/journey.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShieldAlt, faTrophy, faUserFriends, faStar } from "@fortawesome/free-solid-svg-icons";
+import { faShieldAlt, faTrophy, faUserFriends, faStar, faPlus } from "@fortawesome/free-solid-svg-icons";
 import CountUp from "react-countup";
 import avatar from '../assests/avatar.png'
 import avatar1 from '../assests/avatar1.png'
@@ -16,7 +16,7 @@ const AboutSection = () => {
       <div className="container mx-auto">
         {/* About NexCrest */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">About NexCrest</h2>
+          <h2 className="text-3xl font-bold mb-4">About Microvise</h2>
           <p className="text-lg">
             We know what should be provided within a software solution for an
             institute to increase productivity and efficiency of students,
@@ -35,11 +35,11 @@ const AboutSection = () => {
           <div className="md:w-1/2 mt-8 md:mt-0 md:ml-8">
             <h3 className="text-3xl font-semibold mb-4">Our Mission</h3>
             <p className="text-lg mb-8">
-              At <strong>NexCrest</strong>, our mission is to help businesses of all sizes establish a strong and effective online presence through our innovative web development solutions. We aim to deliver customized and high-quality digital products that meet the specific needs of each client, while also providing excellent customer service and support.
+              At <strong>Microvise</strong>, our mission is to help businesses of all sizes establish a strong and effective online presence through our innovative web development solutions. We aim to deliver customized and high-quality digital products that meet the specific needs of each client, while also providing excellent customer service and support.
             </p>
             <h3 className="text-3xl font-semibold mb-4">Our Vision</h3>
             <p className="text-lg">
-              Our vision at <strong>NexCrest</strong> is to become a leading web development company that is recognized for our expertise, innovation, and commitment to client success. We strive to empower businesses with the tools they need to thrive in the digital age, while also forming a collaborative and growth-oriented company culture that values creativity, integrity, and excellence.
+              Our vision at <strong>Microvise</strong> is to become a leading web development company that is recognized for our expertise, innovation, and commitment to client success. We strive to empower businesses with the tools they need to thrive in the digital age, while also forming a collaborative and growth-oriented company culture that values creativity, integrity, and excellence.
             </p>
           </div>
         </div>
@@ -57,15 +57,15 @@ const AboutSection = () => {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-gray-800 p-6 rounded-lg transition duration-300 transform hover:-translate-y-1 hover:shadow-lg" style={{ background: "linear-gradient(145deg, #1a1a1a, #2a2a2a)", boxShadow: "8px 8px 16px #0b0b0b, -8px -8px 16px #333333" }}>
-                <p className="text-3xl font-bold"><CountUp end={200} duration={3} /></p>
+                <p className="text-3xl font-bold"><CountUp end={20} duration={1} /></p>
                 <p className="text-base">Happy Customers</p>
               </div>
               <div className="bg-gray-800 p-6 rounded-lg transition duration-300 transform hover:-translate-y-1 hover:shadow-lg" style={{ background: "linear-gradient(145deg, #1a1a1a, #2a2a2a)", boxShadow: "8px 8px 16px #0b0b0b, -8px -8px 16px #333333" }}>
-                <p className="text-3xl font-bold"><CountUp end={10000} duration={3} /></p>
+                <p className="text-3xl font-bold"><CountUp end={10000} duration={1} /></p>
                 <p className="text-base">Properties For Clients</p>
               </div>
               <div className="bg-gray-800 p-6 rounded-lg transition duration-300 transform hover:-translate-y-1 hover:shadow-lg" style={{ background: "linear-gradient(145deg, #1a1a1a, #2a2a2a)", boxShadow: "8px 8px 16px #0b0b0b, -8px -8px 16px #333333" }}>
-                <p className="text-3xl font-bold"><CountUp end={16} duration={3} /></p>
+                <p className="text-3xl font-bold"><CountUp end={2} duration={1} /></p>
                 <p className="text-base">Years of Experience</p>
               </div>
             </div>
