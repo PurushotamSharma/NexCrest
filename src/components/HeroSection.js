@@ -7,9 +7,18 @@ import avatar from "../assests/avatar.png";
 import virtualImage from "../assests/virtual.png";
 import img1 from "../assests/img1.png";
 import img2 from "../assests/img2.png";
+import img3 from "../assests/img3.png";
+import img4 from "../assests/img4.png";
+import img5 from "../assests/img5.png";
+import img6 from "../assests/img6.png";
+import img7 from "../assests/img7.png";
+
+
+
+
 
 const HeroSection = () => {
-  const images = [virtualImage, img1, img2];
+  const images = [virtualImage, img1, img2,img3,img4,img5,img6,img7];
 
   const settings = {
     dots: true,
