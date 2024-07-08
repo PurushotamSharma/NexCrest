@@ -25,7 +25,7 @@ const Support = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/support', formData);
+      const response = await axios.post('https://backend-inky-iota.vercel.app/api/support', formData);
       console.log(response.data);
       toast.success('Your ticket has been submitted successfully!', {
         position: 'top-right',

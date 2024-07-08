@@ -15,7 +15,7 @@ const ContactSection = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('/api/contact', formData);
+      await axios.post('https://backend-inky-iota.vercel.app/api/contact', formData);
       toast.success('Message sent successfully!');
       setFormData({ fullName: '', email: '', phoneNumber: '', subject: '', message: '' });
     } catch (error) {
