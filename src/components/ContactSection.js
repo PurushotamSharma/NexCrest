@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
-    name: '',
+    fullName: '',
     email: '',
+    phoneNumber: '',
+    subject: '',
     message: '',
   });
 
@@ -12,11 +16,11 @@ const ContactSection = () => {
     e.preventDefault();
     try {
       await axios.post('/api/contact', formData);
-      alert('Message sent!');
-      setFormData({ name: '', email: '', message: '' });
+      toast.success('Message sent successfully!');
+      setFormData({ fullName: '', email: '', phoneNumber: '', subject: '', message: '' });
     } catch (error) {
-      console.error(error);
-      alert('Error sending message. Please try again later.');
+      console.error('Error sending message:', error);
+      toast.error('Error sending message. Please try again later.');
     }
   };
 
@@ -25,31 +29,31 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen bg-black text-white transition-colors duration-300 text-white py-20 px-8 md:px-16">
-      <div className="max-w-md mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-fuchsia-600 mb-4">
-          Contact Us
-        </h2>
-        <p className="text-lg md:text-xl text-gray-400 mb-8">
-          Have a question or want to learn more? Get in touch with us.
+    <section className="bg-black text-white py-20 px-8 md:px-16">
+      <div className="max-w-2xl mx-auto">
+        <h2 className="text-2xl font-bold mb-8">Contact Us</h2>
+        <p className="text-gray-400 mb-8">
+          We are always open to discuss new value-adding partnerships. Do reach out if you are an exchange 
+          or a project looking for liquidity; an algorithmic trader or a software developer looking to improve the
+          markets with us or just have a great idea you can't wait to share with us!
         </p>
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label htmlFor="name" className="block text-gray-400 font-semibold mb-2">
-              Name
+            <label htmlFor="fullName" className="block text-white font-semibold mb-2">
+              Full Name:
             </label>
             <input
               type="text"
-              id="name"
-              name="name"
-              value={formData.name}
+              id="fullName"
+              name="fullName"
+              value={formData.fullName}
               onChange={handleInputChange}
-              className="w-full border border-gray-600 bg-gray-800 rounded-lg py-2 px-3 focus:outline-none focus:ring focus:ring-fuchsia-500"
+              className="w-full bg-gray-800 rounded-lg py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
           <div>
-            <label htmlFor="email" className="block text-gray-400 font-semibold mb-2">
-              Email
+            <label htmlFor="email" className="block text-white font-semibold mb-2">
+              Email Address:
             </label>
             <input
               type="email"
@@ -57,30 +61,58 @@ const ContactSection = () => {
               name="email"
               value={formData.email}
               onChange={handleInputChange}
-              className="w-full border border-gray-600 bg-gray-800 rounded-lg py-2 px-3 focus:outline-none focus:ring focus:ring-fuchsia-500"
+              className="w-full bg-gray-800 rounded-lg py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
           <div>
-            <label htmlFor="message" className="block text-gray-400 font-semibold mb-2">
-              Message
+            <label htmlFor="phoneNumber" className="block text-white font-semibold mb-2">
+              Phone Number:
+            </label>
+            <input
+              type="text"
+              id="phoneNumber"
+              name="phoneNumber"
+              value={formData.phoneNumber}
+              onChange={handleInputChange}
+              className="w-full bg-gray-800 rounded-lg py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+          <div>
+            <label htmlFor="subject" className="block text-white font-semibold mb-2">
+              Subject
+            </label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              value={formData.subject}
+              onChange={handleInputChange}
+              className="w-full bg-gray-800 rounded-lg py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+          <div>
+            <label htmlFor="message" className="block text-white font-semibold mb-2">
+              Message:
             </label>
             <textarea
               id="message"
               name="message"
               value={formData.message}
               onChange={handleInputChange}
-              className="w-full border border-gray-600 bg-gray-800 rounded-lg py-2 px-3 focus:outline-none focus:ring focus:ring-fuchsia-500 resize-none"
+              className="w-full bg-gray-800 rounded-lg py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
               rows="4"
+              placeholder="Enter Your Message"
             ></textarea>
           </div>
           <button
             type="submit"
-            className="bg-fuchsia-600 hover:bg-fuchsia-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300"
+            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300"
           >
             Submit
           </button>
         </form>
       </div>
+      <ToastContainer />
     </section>
   );
 };

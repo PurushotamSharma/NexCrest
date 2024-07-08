@@ -1,0 +1,218 @@
+body {
+    font-family: 'JetBrains Mono', monospace;
+    background-color: #0B052C;
+    color: #ffffff;
+  }
+  
+  .support-container {
+    padding: 20px;
+  }
+  
+  .support-header h1 {
+    font-size: 3rem;
+    text-align: center;
+  }
+  
+  .support-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+  }
+  
+  .support-text {
+    width: 60%;
+  }
+  
+  .support-text h2 {
+    font-size: 2rem;
+  }
+  
+  .support-text .highlight {
+    color: #FF6347; /* Change this to the highlight color you prefer */
+  }
+  
+  .support-text p {
+    font-size: 1.2rem;
+    margin: 20px 0;
+  }
+  
+  .support-features {
+    width: 35%;
+    background-color: #1A1A2E;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .features-benefits h3,
+  .suggest-for h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .features-benefits ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .features-benefits li {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+  
+  .suggest-for .tags span {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 5px;
+  }
+  
+  .support-form {
+    margin-top: 40px;
+  }
+  
+  .support-form h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  
+  .support-form .highlight {
+    color: #FF6347; /* Change this to the highlight color you prefer */
+  }
+  
+  .support-form form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .support-form .form-group {
+    width: 48%;
+    margin-bottom: 20px;
+  }
+  
+  .support-form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .support-form input,
+  .support-form select,
+  .support-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .support-form textarea {
+    height: 100px;
+  }
+  
+  .support-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #FF6347;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  .consultation-banner {
+    text-align: center;
+    background-color: #1A1A2E;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 40px;
+  }
+  
+  .consultation-banner h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .consultation-banner p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .consult-now {
+    padding: 10px 20px;
+    background-color: #FF6347;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  .whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+  }
+  
+  .whatsapp-button img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
+  .support-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .features-benefits h3,
+  .suggest-for h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .features-benefits ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .features-benefits li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .tags span {
+    padding: 0.5rem 1rem;
+    background-color: #f5f5f5;
+    border-radius: 20px;
+    font-size: 0.9rem;
+  }
+
+  /* Add styles for success and error messages */
+.submit-message {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  .submit-message.success {
+    background-color: #5cb85c;
+    color: white;
+  }
+  
+  .submit-message.error {
+    background-color: #d9534f;
+    color: white;
+  }
+  
