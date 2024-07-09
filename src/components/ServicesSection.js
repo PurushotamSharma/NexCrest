@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSpring, animated } from '@react-spring/web';
 import { FaTools, FaServer, FaPalette } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 import domainHostingImage from '../assests/hosting.png';
 import websiteDevelopmentImage from '../assests/website.png';
@@ -9,7 +10,6 @@ import appDevelopmentImage from '../assests/app.png';
 import graphicDesignImage from '../assests/ux.png';
 import cloudMigrationImage from '../assests/mig.png';
 import devopsImage from '../assests/devops.png';
-import websiteMaintenanceImage from '../assests/websitemm.png';
 
 const services = [
   {
@@ -19,7 +19,8 @@ const services = [
     tools: ["cPanel", "Plesk", "WHM", "SSL Certificates"],
     techStack: ["DNS", "HTTP/HTTPS", "FTP", "Email Hosting"],
     image: domainHostingImage,
-    color: 'text-pink-500'
+    color: 'text-pink-500',
+    borderColor: 'border-color-1',
   },
   {
     id: 2,
@@ -28,7 +29,8 @@ const services = [
     tools: ["React", "Node.js", "MongoDB", "Express"],
     techStack: ["HTML5", "CSS3", "JavaScript", "REST APIs"],
     image: websiteDevelopmentImage,
-    color: 'text-blue-500'
+    color: 'text-blue-500',
+    borderColor: 'border-color-2',
   },
   {
     id: 3,
@@ -37,7 +39,8 @@ const services = [
     tools: ["Netlify", "Vercel", "AWS", "Azure"],
     techStack: ["CI/CD", "Docker", "Kubernetes", "Serverless"],
     image: websiteDeploymentImage,
-    color: 'text-green-500'
+    color: 'text-green-500',
+    borderColor: 'border-color-3',
   },
   {
     id: 4,
@@ -46,7 +49,8 @@ const services = [
     tools: ["React Native", "Flutter", "Firebase", "AWS"],
     techStack: ["Swift", "Kotlin", "GraphQL", "Push Notifications"],
     image: appDevelopmentImage,
-    color: 'text-yellow-500'
+    color: 'text-yellow-500',
+    borderColor: 'border-color-4',
   },
   {
     id: 5,
@@ -55,7 +59,8 @@ const services = [
     tools: ["Figma", "Adobe XD", "Sketch", "Photoshop"],
     techStack: ["Wireframing", "Prototyping", "User Research", "Visual Design"],
     image: graphicDesignImage,
-    color: 'text-purple-500'
+    color: 'text-purple-500',
+    borderColor: 'border-color-5',
   },
   {
     id: 6,
@@ -64,7 +69,8 @@ const services = [
     tools: ["AWS", "Azure", "Google Cloud", "Terraform"],
     techStack: ["Virtual Machines", "Cloud Storage", "Networking", "Security"],
     image: cloudMigrationImage,
-    color: 'text-pink-500'
+    color: 'text-pink-500',
+    borderColor: 'border-color-6',
   },
   {
     id: 7,
@@ -73,22 +79,15 @@ const services = [
     tools: ["Jenkins", "GitLab CI", "Ansible", "Prometheus"],
     techStack: ["CI/CD Pipelines", "Infrastructure as Code", "Monitoring", "Logging"],
     image: devopsImage,
-    color: 'text-orange-500'
+    color: 'text-orange-500',
+    borderColor: 'border-color-7',
   },
-  {
-    id: 8,
-    title: "Website Maintenance",
-    description: "Offering ongoing support and maintenance for your website.",
-    tools: ["WordPress", "Joomla", "Drupal", "SiteGround"],
-    techStack: ["Backup Solutions", "Security Updates", "Performance Optimization", "Content Updates"],
-    image: websiteMaintenanceImage,
-    color: 'text-teal-500'
-  }
 ];
 
 const ServicesSection = () => {
   const [selectedService, setSelectedService] = useState(null);
   const [displayedServices, setDisplayedServices] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     let index = 0;
@@ -109,9 +108,12 @@ const ServicesSection = () => {
     config: { duration: 300 },
   });
 
+  const handleTalkToExpert = () => {
+    navigate('/contact');
+  };
+
   return (
     <section className="bg-black text-white min-h-screen p-8 relative overflow-hidden">
-     
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-20">
           <h2 className="text-4xl font-bold mb-4 text-gradient bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text animate-text-gradient">
@@ -133,14 +135,15 @@ const ServicesSection = () => {
               }`}
             >
               <div
-                className={`bg-gray-900 p-8 rounded-2xl w-2/3 transform transition-all duration-300 hover:scale-105 cursor-pointer shadow-neon hover:shadow-lg ${service?.color}`}
+                className={`service-box bg-gray-900 p-8 rounded-2xl w-2/3 transform transition-all duration-300 hover:scale-105 cursor-pointer shadow-neon hover:shadow-lg border-2 border-transparent rounded-full relative`}
                 onClick={() => setSelectedService(service)}
               >
-                <h3 className="text-3xl font-bold mb-4 flex items-center">
+                <div className={`absolute inset-0 rounded-full border-2 border-transparent animate-border-gradient ${service?.borderColor}`}></div>
+                <h3 className={`text-3xl font-bold mb-4 flex items-center text-white relative z-10`}>
                   {getServiceIcon(service?.title)}
                   <span className="ml-2">{service?.title}</span>
                 </h3>
-                <p className="text-gray-400 text-lg">{service?.description}</p>
+                <p className={`text-gray-400 text-lg relative z-10`}>{service?.description}</p>
               </div>
             </div>
           ))}
@@ -194,9 +197,7 @@ const ServicesSection = () => {
             <div className="flex justify-between">
               <button
                 className="bg-gradient-to-r from-pink-500 to-blue-500 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-gradient-to-l transition duration-300 transform hover:scale-105 shadow-neon flex items-center"
-                onClick={() => {
-                  /* Add Talk to Expert functionality */
-                }}
+                onClick={handleTalkToExpert}
               >
                 <FaPalette className="mr-2" />
                 <span>Talk to Expert</span>
@@ -231,8 +232,6 @@ const getServiceIcon = (serviceTitle) => {
       return <FaServer className="text-pink-500" />;
     case 'DevOps':
       return <FaTools className="text-orange-500" />;
-    case 'Website Maintenance':
-      return <FaTools className="text-teal-500" />;
     default:
       return null;
   }

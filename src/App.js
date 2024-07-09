@@ -17,7 +17,7 @@ import ProductionManagementPage from './components/products/ProductionManagement
 import TaxiBookingPage from './components/products/TaxiBookingPage';
 import BusinessListingPage from './components/products/BusinessListingPage';
 import Support from './components/Support';
-
+import WhatsAppChatButton from './components/WhatsAppChatButton';
 import './fonts.css';
 
 const App = () => {
@@ -45,6 +45,7 @@ const App = () => {
           </Routes>
         </main>
         <Footer />
+        <WhatsAppChatButton />
       </div>
     </Router>
   );

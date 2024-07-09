@@ -16,7 +16,7 @@ const AboutSection = () => {
       <div className="container mx-auto">
         {/* About NexCrest */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">About Microvise</h2>
+          <h2 className="text-3xl font-bold mb-4">About Wisbloom</h2>
           <p className="text-lg">
             We know what should be provided within a software solution for an
             institute to increase productivity and efficiency of students,
@@ -35,11 +35,11 @@ const AboutSection = () => {
           <div className="md:w-1/2 mt-8 md:mt-0 md:ml-8">
             <h3 className="text-3xl font-semibold mb-4">Our Mission</h3>
             <p className="text-lg mb-8">
-              At <strong>Microvise</strong>, our mission is to help businesses of all sizes establish a strong and effective online presence through our innovative web development solutions. We aim to deliver customized and high-quality digital products that meet the specific needs of each client, while also providing excellent customer service and support.
+              At <strong>Wisbloom</strong>, our mission is to help businesses of all sizes establish a strong and effective online presence through our innovative web development solutions. We aim to deliver customized and high-quality digital products that meet the specific needs of each client, while also providing excellent customer service and support.
             </p>
             <h3 className="text-3xl font-semibold mb-4">Our Vision</h3>
             <p className="text-lg">
-              Our vision at <strong>Microvise</strong> is to become a leading web development company that is recognized for our expertise, innovation, and commitment to client success. We strive to empower businesses with the tools they need to thrive in the digital age, while also forming a collaborative and growth-oriented company culture that values creativity, integrity, and excellence.
+              Our vision at <strong>Wisbloom</strong> is to become a leading web development company that is recognized for our expertise, innovation, and commitment to client success. We strive to empower businesses with the tools they need to thrive in the digital age, while also forming a collaborative and growth-oriented company culture that values creativity, integrity, and excellence.
             </p>
           </div>
         </div>

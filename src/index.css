@@ -18,6 +18,7 @@ code {
 html, body, #root {
   height: 100%;
 }
+
 .learn-more {
   @apply relative inline-flex items-center px-6 py-3 overflow-hidden font-bold text-white bg-gradient-to-r from-purple-500 to-pink-500 rounded-full;
 }
@@ -51,5 +52,140 @@ html, body, #root {
   @apply transform translate-x-3;
 }
 
-/* Company section */
-/* Add this CSS to your styles.css or global stylesheet */
+/* Animated text gradient */
+.text-gradient {
+  @apply bg-clip-text text-transparent;
+}
+
+.animate-text-gradient {
+  animation: textGradientAnimation 5s ease-in-out infinite;
+}
+
+@keyframes textGradientAnimation {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Neon shadow effect */
+.shadow-neon {
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.8), 0 0 20px rgba(255, 105, 180, 0.6), 0 0 30px rgba(255, 105, 180, 0.4), 0 0 40px rgba(255, 105, 180, 0.2);
+}
+
+/* Animated glow effect */
+.animate-glow {
+  animation: glowAnimation 2s ease-in-out infinite;
+}
+
+@keyframes glowAnimation {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(255, 105, 180, 0.8), 0 0 10px rgba(255, 105, 180, 0.6), 0 0 15px rgba(255, 105, 180, 0.4), 0 0 20px rgba(255, 105, 180, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.8), 0 0 20px rgba(255, 105, 180, 0.6), 0 0 30px rgba(255, 105, 180, 0.4), 0 0 40px rgba(255, 105, 180, 0.2);
+  }
+}
+
+/* Animated shine effect */
+.animate-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.animate-shine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: 0.5s;
+}
+
+.animate-shine:hover::before {
+  left: 100%;
+}
+
+/* Animated shine pulse effect */
+.animate-shine-pulse {
+  animation: shinePulseAnimation 2s ease-in-out infinite;
+}
+
+@keyframes shinePulseAnimation {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(255, 105, 180, 0.8), 0 0 10px rgba(255, 105, 180, 0.6), 0 0 15px rgba(255, 105, 180, 0.4), 0 0 20px rgba(255, 105, 180, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.8), 0 0 20px rgba(255, 105, 180, 0.6), 0 0 30px rgba(255, 105, 180, 0.4), 0 0 40px rgba(255, 105, 180, 0.2);
+  }
+}
+
+/* Animated border gradient */
+@keyframes borderGradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-border-gradient {
+  background-size: 400% 400%;
+  animation: borderGradientAnimation 5s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.service-box:hover .animate-border-gradient {
+  opacity: 1;
+}
+
+.border-color-1 {
+  background-image: linear-gradient(to right, #ff6b6b, #ffa194);
+}
+
+.border-color-2 {
+  background-image: linear-gradient(to right, #4ecdc4, #556270);
+}
+
+.border-color-3 {
+  background-image: linear-gradient(to right, #c644fc, #5856d6);
+}
+
+.border-color-4 {
+  background-image: linear-gradient(to right, #ef4e7b, #a166ab);
+}
+
+.border-color-5 {
+  background-image: linear-gradient(to right, #ff7f50, #ff1493);
+}
+
+.border-color-6 {
+  background-image: linear-gradient(to right, #00c9ff, #92fe9d);
+}
+
+.border-color-7 {
+  background-image: linear-gradient(to right, #ff758c, #ff7eb3);
+}
+
+.border-color-8 {
+  background-image: linear-gradient(to right, #868f96, #596164);
+}
+
+
+/* // navbar  */
+
+nav a.active {
+  color: white;
+  background-image: linear-gradient(to right, #9f7aea, #ed64a6);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: scale(1.1);
+}
