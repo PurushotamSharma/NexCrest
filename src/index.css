@@ -52,7 +52,7 @@ html, body, #root {
   @apply transform translate-x-3;
 }
 
-/* Animated text gradient */
+Animated text gradient
 .text-gradient {
   @apply bg-clip-text text-transparent;
 }

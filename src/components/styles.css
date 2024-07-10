@@ -1,0 +1,30 @@
+nav a {
+    position: relative;
+    color: gray;
+    text-decoration: none;
+  }
+  
+  nav a.active {
+    color: white;
+  }
+  
+  nav a.active::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #ff00ff; /* Change this to your desired color */
+    left: 0;
+    bottom: -2px;
+    animation: line-animation 0.5s ease-in-out forwards;
+  }
+  
+  @keyframes line-animation {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 0%;
+    }
+  }
+  

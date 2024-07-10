@@ -15,7 +15,7 @@ const HomePage = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const sectionId = entry.target.getAttribute('id');
-            const navLink = document.querySelector(`a[href="/${sectionId}"]`);
+            const navLink = document.querySelector(`nav a[href="/${sectionId}"]`);
             if (navLink) {
               document.querySelectorAll('nav a').forEach((link) => link.classList.remove('active'));
               navLink.classList.add('active');
@@ -30,19 +30,23 @@ const HomePage = () => {
     );
 
     sectionRefs.current.forEach((section) => {
-      observer.observe(section);
+      if (section) {
+        observer.observe(section);
+      }
     });
 
     return () => {
       sectionRefs.current.forEach((section) => {
-        observer.unobserve(section);
+        if (section) {
+          observer.unobserve(section);
+        }
       });
     };
   }, []);
 
   return (
     <div className="min-h-screen bg-[#0B052C] text-white">
-      <section id="" ref={(el) => (sectionRefs.current[0] = el)}>
+      <section id="hero" ref={(el) => (sectionRefs.current[0] = el)}>
         <HeroSection />
       </section>
       <section id="services" ref={(el) => (sectionRefs.current[1] = el)}>

@@ -105,7 +105,7 @@ const HeroSection = () => {
       
     </h1>
     <p className="text-lg mb-8 transition duration-500 ease-in-out transform hover:scale-105">
-    <span className="text-pink text-5xl">Wisbloom</span>  Where we transform your digital aspirations into reality with our
+    <span className="text-pink text-5xl">Wizbloom</span>  Where we transform your digital aspirations into reality with our
       cutting-edge IT solutions. As pioneers in the field of information
       technology, we are dedicated to delivering innovative, reliable, and
       customized solutions that drive success across all industries.
@@ -146,7 +146,7 @@ const HeroSection = () => {
       </div>
       <div className="mt-12 pb-12">
         <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center transition duration-500 ease-in-out transform hover:scale-105">
-          Why Choose Wisbloom
+          Why Choose Wizbloom
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
           <div className="flex items-center transition duration-500 ease-in-out transform hover:scale-105">

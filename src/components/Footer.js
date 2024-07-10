@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <img src={logo} alt="Wisbloom Logo" className="w-40 mb-4" />
+            <img src={logo} alt="Wizbloom Logo" className="w-40 mb-4" />
             <div className="flex space-x-4">
               <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
                 <FontAwesomeIcon icon={faFacebook} className="text-2xl text-white hover:text-blue-500" />
@@ -71,10 +71,10 @@ const Footer = () => {
         </div>
         <div className="mt-8 border-t border-gray-700 pt-8 text-center">
           <p className="text-sm">
-            &copy; {new Date().getFullYear()} Wisbloom. All Rights Reserved.
+            &copy; {new Date().getFullYear()} Wizbloom. All Rights Reserved.
           </p>
           <p className="text-sm mt-2">
-            Made with <span className="text-red-500">&hearts;</span> by Wisbloom
+            Made with <span className="text-red-500">&hearts;</span> by Wizbloom
           </p>
         </div>
       </div>
