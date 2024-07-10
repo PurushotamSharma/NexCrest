@@ -18,6 +18,7 @@ import TaxiBookingPage from './components/products/TaxiBookingPage';
 import BusinessListingPage from './components/products/BusinessListingPage';
 import Support from './components/Support';
 import WhatsAppChatButton from './components/WhatsAppChatButton';
+import ScheduleMeetingButton from './components/ScheduleMeetingButton.js';
 import './fonts.css';
 
 const App = () => {
@@ -46,6 +47,7 @@ const App = () => {
         </main>
         <Footer />
         <WhatsAppChatButton />
+        <ScheduleMeetingButton />
       </div>
     </Router>
   );

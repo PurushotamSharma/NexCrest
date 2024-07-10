@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import contact from  '../assests/Image.png'
+import { FaPhone, FaEnvelope } from 'react-icons/fa';
+import contact from '../assests/Image.png'; // Ensure this path is correct
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -38,7 +39,7 @@ const ContactSection = () => {
           or a project looking for liquidity; an algorithmic trader or a software developer looking to improve the
           markets with us or just have a great idea you can't wait to share with us!
         </p>
-        <div className="relative bg-black p-6 rounded-lg border border-gray-600">
+        <div className="relative bg-black p-6 rounded-lg border border-gray-600 mb-8">
           <div className="absolute top-0 left-0 w-full flex justify-start p-3 space-x-1">
             <span className="w-3 h-3 bg-red-500 rounded-full"></span>
             <span className="w-3 h-3 bg-yellow-500 rounded-full"></span>
@@ -119,13 +120,18 @@ const ContactSection = () => {
             </button>
           </form>
         </div>
-        {/* <div className="absolute top-1/2 right-2 transform translate-x-1/3 -translate-y-1/9">
-          <img
-            src={contact}
-            alt="Contact Us"
-            className="w-64 h-64 rounded-full "
-          />
-        </div> */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="bg-gray-800 p-6 rounded-lg transition duration-300 transform hover:-translate-y-1 hover:shadow-lg" style={{ background: "linear-gradient(145deg, #1a1a1a, #2a2a2a)", boxShadow: "8px 8px 16px #0b0b0b, -8px -8px 16px #333333" }}>
+            <FaPhone className="text-red-500 text-3xl mb-2" />
+            <h3 className="text-xl font-bold text-red-500">Phone</h3>
+            <p className="text-gray-400 mt-2">+91 8866955496</p>
+          </div>
+          <div className="bg-gray-800 p-6 rounded-lg transition duration-300 transform hover:-translate-y-1 hover:shadow-lg" style={{ background: "linear-gradient(145deg, #1a1a1a, #2a2a2a)", boxShadow: "8px 8px 16px #0b0b0b, -8px -8px 16px #333333" }}>
+            <FaEnvelope className="text-red-500 text-3xl mb-2" />
+            <h3 className="text-xl font-bold text-red-500">Email</h3>
+            <p className="text-gray-400 mt-2">wizbloom.tech@gmail.com</p>
+          </div>
+        </div>
       </div>
       <ToastContainer />
     </section>
