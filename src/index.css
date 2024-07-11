@@ -15,7 +15,9 @@ code {
     monospace;
 }
 
-html, body, #root {
+html,
+body,
+#root {
   height: 100%;
 }
 
@@ -52,8 +54,7 @@ html, body, #root {
   @apply transform translate-x-3;
 }
 
-Animated text gradient
-.text-gradient {
+Animated text gradient .text-gradient {
   @apply bg-clip-text text-transparent;
 }
 
@@ -62,9 +63,12 @@ Animated text gradient
 }
 
 @keyframes textGradientAnimation {
-  0%, 100% {
+
+  0%,
+  100% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
@@ -81,9 +85,12 @@ Animated text gradient
 }
 
 @keyframes glowAnimation {
-  0%, 100% {
+
+  0%,
+  100% {
     box-shadow: 0 0 5px rgba(255, 105, 180, 0.8), 0 0 10px rgba(255, 105, 180, 0.6), 0 0 15px rgba(255, 105, 180, 0.4), 0 0 20px rgba(255, 105, 180, 0.2);
   }
+
   50% {
     box-shadow: 0 0 10px rgba(255, 105, 180, 0.8), 0 0 20px rgba(255, 105, 180, 0.6), 0 0 30px rgba(255, 105, 180, 0.4), 0 0 40px rgba(255, 105, 180, 0.2);
   }
@@ -116,9 +123,12 @@ Animated text gradient
 }
 
 @keyframes shinePulseAnimation {
-  0%, 100% {
+
+  0%,
+  100% {
     box-shadow: 0 0 5px rgba(255, 105, 180, 0.8), 0 0 10px rgba(255, 105, 180, 0.6), 0 0 15px rgba(255, 105, 180, 0.4), 0 0 20px rgba(255, 105, 180, 0.2);
   }
+
   50% {
     box-shadow: 0 0 10px rgba(255, 105, 180, 0.8), 0 0 20px rgba(255, 105, 180, 0.6), 0 0 30px rgba(255, 105, 180, 0.4), 0 0 40px rgba(255, 105, 180, 0.2);
   }
@@ -129,9 +139,11 @@ Animated text gradient
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -188,4 +200,30 @@ nav a.active {
   background-image: linear-gradient(to right, #9f7aea, #ed64a6);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transform: scale(1.1);
+}
+
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: 'JetBrains Mono', source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+.service-box {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
 }

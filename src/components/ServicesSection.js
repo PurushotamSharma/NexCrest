@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useSpring, animated } from '@react-spring/web';
 import { FaTools, FaServer, FaPalette } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
+import CountUp from 'react-countup';
 
 import domainHostingImage from '../assests/hosting.png';
 import websiteDevelopmentImage from '../assests/website.png';
@@ -19,8 +20,6 @@ const services = [
     tools: ["cPanel", "Plesk", "WHM", "SSL Certificates"],
     techStack: ["DNS", "HTTP/HTTPS", "FTP", "Email Hosting"],
     image: domainHostingImage,
-    color: 'text-pink-500',
-    borderColor: 'border-color-1',
   },
   {
     id: 2,
@@ -29,8 +28,6 @@ const services = [
     tools: ["React", "Node.js", "MongoDB", "Express"],
     techStack: ["HTML5", "CSS3", "JavaScript", "REST APIs"],
     image: websiteDevelopmentImage,
-    color: 'text-blue-500',
-    borderColor: 'border-color-2',
   },
   {
     id: 3,
@@ -39,8 +36,6 @@ const services = [
     tools: ["Netlify", "Vercel", "AWS", "Azure"],
     techStack: ["CI/CD", "Docker", "Kubernetes", "Serverless"],
     image: websiteDeploymentImage,
-    color: 'text-green-500',
-    borderColor: 'border-color-3',
   },
   {
     id: 4,
@@ -49,8 +44,6 @@ const services = [
     tools: ["React Native", "Flutter", "Firebase", "AWS"],
     techStack: ["Swift", "Kotlin", "GraphQL", "Push Notifications"],
     image: appDevelopmentImage,
-    color: 'text-yellow-500',
-    borderColor: 'border-color-4',
   },
   {
     id: 5,
@@ -59,8 +52,6 @@ const services = [
     tools: ["Figma", "Adobe XD", "Sketch", "Photoshop"],
     techStack: ["Wireframing", "Prototyping", "User Research", "Visual Design"],
     image: graphicDesignImage,
-    color: 'text-purple-500',
-    borderColor: 'border-color-5',
   },
   {
     id: 6,
@@ -69,8 +60,6 @@ const services = [
     tools: ["AWS", "Azure", "Google Cloud", "Terraform"],
     techStack: ["Virtual Machines", "Cloud Storage", "Networking", "Security"],
     image: cloudMigrationImage,
-    color: 'text-pink-500',
-    borderColor: 'border-color-6',
   },
   {
     id: 7,
@@ -79,8 +68,6 @@ const services = [
     tools: ["Jenkins", "GitLab CI", "Ansible", "Prometheus"],
     techStack: ["CI/CD Pipelines", "Infrastructure as Code", "Monitoring", "Logging"],
     image: devopsImage,
-    color: 'text-orange-500',
-    borderColor: 'border-color-7',
   },
 ];
 
@@ -88,18 +75,28 @@ const ServicesSection = () => {
   const [selectedService, setSelectedService] = useState(null);
   const [displayedServices, setDisplayedServices] = useState([]);
   const navigate = useNavigate();
+  const sectionRef = useRef(null);
 
   useEffect(() => {
-    let index = 0;
-    const interval = setInterval(() => {
-      if (index < services.length) {
-        setDisplayedServices((prev) => [...prev, services[index]]);
-        index += 1;
-      } else {
-        clearInterval(interval);
+    const handleScroll = () => {
+      const sectionElement = sectionRef.current;
+      if (sectionElement) {
+        const sectionTop = sectionElement.offsetTop;
+        const sectionBottom = sectionTop + sectionElement.offsetHeight;
+        const scrollPosition = window.pageYOffset + window.innerHeight;
+
+        if (scrollPosition >= sectionTop && scrollPosition <= sectionBottom) {
+          const scrollPercentage = (scrollPosition - sectionTop) / (sectionBottom - sectionTop);
+          const servicesCount = Math.ceil(scrollPercentage * services.length);
+          setDisplayedServices(services.slice(0, servicesCount));
+        }
       }
-    }, 300);
-    return () => clearInterval(interval);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const popupAnimation = useSpring({
@@ -113,37 +110,40 @@ const ServicesSection = () => {
   };
 
   return (
-    <section className="bg-black text-white min-h-screen p-8 relative overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="bg-black text-white min-h-screen p-8 relative overflow-hidden"
+    >
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-20">
-          <h2 className="text-4xl font-bold mb-4 text-gradient bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text animate-text-gradient">
-            Our Services
-          </h2>
+          <h2 className="text-4xl font-bold mb-4 text-white">Our Services</h2>
           <p className="text-lg text-gray-400">
             Explore our wide range of services tailored to your needs.
           </p>
         </div>
 
         <div className="relative">
-          <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-pink-500 to-blue-500 transform -translate-x-1/2 rounded-full shadow-neon animate-glow"></div>
+          <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gray-600 transform -translate-x-1/2 rounded-full"></div>
 
           {displayedServices.map((service, index) => (
             <div
               key={service?.id}
-              className={`flex items-center mb-32 ${
-                index % 2 === 0 ? 'justify-end' : 'justify-start'
-              }`}
+              className={`flex items-center mb-32 ${index % 2 === 0 ? 'justify-end' : 'justify-start'
+                }`}
             >
               <div
-                className={`service-box bg-gray-900 p-8 rounded-2xl w-2/3 transform transition-all duration-300 hover:scale-105 cursor-pointer shadow-neon hover:shadow-lg border-2 border-transparent rounded-full relative`}
+                className="bg-gray-800 p-6 rounded-lg transition duration-300 transform hover:-translate-y-1 hover:shadow-lg w-2/3 cursor-pointer"
+                style={{
+                  background: 'linear-gradient(145deg, #1a1a1a, #2a2a2a)',
+                  boxShadow: '8px 8px 16px #0b0b0b, -8px -8px 16px #333333',
+                }}
                 onClick={() => setSelectedService(service)}
               >
-                <div className={`absolute inset-0 rounded-full border-2 border-transparent animate-border-gradient ${service?.borderColor}`}></div>
-                <h3 className={`text-3xl font-bold mb-4 flex items-center text-white relative z-10`}>
+                <h3 className="text-3xl font-bold mb-2 flex items-center">
                   {getServiceIcon(service?.title)}
                   <span className="ml-2">{service?.title}</span>
                 </h3>
-                <p className={`text-gray-400 text-lg relative z-10`}>{service?.description}</p>
+                <p className="text-base text-gray-400">{service?.description}</p>
               </div>
             </div>
           ))}
@@ -155,40 +155,44 @@ const ServicesSection = () => {
           style={popupAnimation}
           className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4"
         >
-          <div className="bg-gray-900 p-8 rounded-3xl max-w-2xl w-full shadow-neon border border-gradient-to-r from-pink-500 to-blue-500 transform transition-all duration-300 scale-100 animate-shine-pulse">
-            <h3 className="text-3xl font-bold mb-6 flex items-center">
+          <div
+            className="bg-gray-800 p-6 rounded-lg max-w-lg w-full shadow-lg"
+            style={{
+              background: 'linear-gradient(145deg, #1a1a1a, #2a2a2a)',
+              boxShadow: '8px 8px 16px #0b0b0b, -8px -8px 16px #333333',
+            }}
+          >
+            <h3 className="text-2xl font-bold mb-4 flex items-center text-white">
               {getServiceIcon(selectedService?.title)}
-              <span className="ml-2 text-gradient bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text">
-                {selectedService?.title}
-              </span>
+              <span className="ml-2">{selectedService?.title}</span>
             </h3>
-            <p className="text-xl mb-6 text-gray-400">{selectedService?.description}</p>
+            <p className="text-lg mb-4 text-gray-400">{selectedService?.description}</p>
             <img
               src={selectedService?.image}
               alt={selectedService?.title}
-              className="mb-6 w-full h-64 object-cover rounded-xl shadow-neon animate-pulse"
+              className="mb-4 w-full h-40 object-cover rounded-lg"
             />
-            <div className="mb-6">
-              <h4 className="text-2xl font-semibold mb-3 text-gradient bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text flex items-center">
+            <div className="mb-4">
+              <h4 className="text-xl font-semibold mb-2 text-white flex items-center">
                 <FaTools className="mr-2" />
                 <span>Tools:</span>
               </h4>
               <ul className="list-disc list-inside text-gray-400">
                 {selectedService?.tools.map((tool, index) => (
-                  <li key={index} className="mb-2">
+                  <li key={index} className="mb-1">
                     {tool}
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="mb-8">
-              <h4 className="text-2xl font-semibold mb-3 text-gradient bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text flex items-center">
+            <div className="mb-6">
+              <h4 className="text-xl font-semibold mb-2 text-white flex items-center">
                 <FaServer className="mr-2" />
                 <span>Tech Stack:</span>
               </h4>
               <ul className="list-disc list-inside text-gray-400">
                 {selectedService?.techStack.map((tech, index) => (
-                  <li key={index} className="mb-2">
+                  <li key={index} className="mb-1">
                     {tech}
                   </li>
                 ))}
@@ -196,14 +200,14 @@ const ServicesSection = () => {
             </div>
             <div className="flex justify-between">
               <button
-                className="bg-gradient-to-r from-pink-500 to-blue-500 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-gradient-to-l transition duration-300 transform hover:scale-105 shadow-neon flex items-center"
+                className="bg-blue-600 text-white px-4 py-2 rounded-lg text-lg font-semibold"
                 onClick={handleTalkToExpert}
               >
-                <FaPalette className="mr-2" />
+                <FaPalette className="mr-2 inline-block" />
                 <span>Talk to Expert</span>
               </button>
               <button
-                className="bg-gray-700 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-gray-600 transition duration-300 transform hover:scale-105 shadow-neon"
+                className="bg-gray-700 text-white px-4 py-2 rounded-lg text-lg font-semibold"
                 onClick={() => setSelectedService(null)}
               >
                 Close
