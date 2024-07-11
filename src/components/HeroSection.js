@@ -10,9 +10,10 @@ import img4 from "../assests/img4.png";
 import img5 from "../assests/img5.png";
 import img7 from "../assests/img7.png";
 import logo from '../assests/logo.png';
+import img8 from '../assests/homepage2.svg';
 
 const HeroSection = () => {
-  const images = [virtualImage, img3, img4, img5, img7];
+  const images = [img8, virtualImage, img3, img4, img5, img7,];
 
   const settings = {
     dots: true,
@@ -27,7 +28,7 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen bg-black text-white transition-colors duration-300">
       <header className="fixed top-0 left-0 right-0 z-50 bg-opacity-90 backdrop-blur-md">
-      
+
         <div className="max-w-7xl mx-auto px-4 xl:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <nav className="flex-1">
@@ -92,56 +93,56 @@ const HeroSection = () => {
             <span className="text-fuchsia-600">Securing</span>{" "}
             <span className="text-blue-500">Your</span>{" "}
             <span className="text-green-500">Success!"</span>{" "}
-        
+
           </h2>
         </div>
         <div className="flex flex-col md:flex-row items-center justify-between">
-  <div className="md:w-1/2 px-8 text-left">
-    <h1 className="text-8xl md:text-8xl font-bold mb-6 transition duration-500 ease-in-out transform hover:scale-105">
-      <span className="text-fuchsia-600 text-9xl leading-none">W</span>
-      <span className="text-fuchsia-600">elcome</span>
-      <span className="text-white"> to</span>
-      <br />
-      
-    </h1>
-    <p className="text-lg mb-8 transition duration-500 ease-in-out transform hover:scale-105">
-    <span className="text-pink text-5xl">Wizbloom</span>  Where we transform your digital aspirations into reality with our
-      cutting-edge IT solutions. As pioneers in the field of information
-      technology, we are dedicated to delivering innovative, reliable, and
-      customized solutions that drive success across all industries.
-    </p>
-    <a href="#" className="learn-more group">
-      <span className="button-text">Learn More</span>
-      <span className="arrow-icon">
-        <svg
-          className="arrow-icon-svg"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M5 12h14M12 5l7 7-7 7" />
-        </svg>
-      </span>
-    </a>
-  </div>
-  <div className="md:w-1/2 px-4 mt-8 md:mt-0">
-    <Slider {...settings}>
-      {images.map((image, index) => (
-        <div key={index}>
-          <img
-            src={image}
-            alt={`Hero ${index + 1}`}
-            className="w-full h-auto rounded-full"
-          />
+          <div className="md:w-1/2 px-8 text-left">
+            <h1 className="text-8xl md:text-8xl font-bold mb-6 transition duration-500 ease-in-out transform hover:scale-105">
+              <span className="text-fuchsia-600 text-9xl leading-none">W</span>
+              <span className="text-fuchsia-600">elcome</span>
+              <span className="text-white"> to</span>
+              <br />
+
+            </h1>
+            <p className="text-lg mb-8 transition duration-500 ease-in-out transform hover:scale-105">
+              <span className="text-pink text-5xl">Wizbloom</span>  Where we transform your digital aspirations into reality with our
+              cutting-edge IT solutions. As pioneers in the field of information
+              technology, we are dedicated to delivering innovative, reliable, and
+              customized solutions that drive success across all industries.
+            </p>
+            <a href="#" className="learn-more group">
+              <span className="button-text">Learn More</span>
+              <span className="arrow-icon">
+                <svg
+                  className="arrow-icon-svg"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </span>
+            </a>
+          </div>
+          <div className="md:w-1/2 px-4 mt-8 md:mt-0">
+            <Slider {...settings}>
+              {images.map((image, index) => (
+                <div key={index}>
+                  <img
+                    src={image}
+                    alt={`Hero ${index + 1}`}
+                    className="w-full h-auto rounded-full"
+                  />
+                </div>
+              ))}
+            </Slider>
+          </div>
         </div>
-      ))}
-    </Slider>
-  </div>
-</div>
 
       </div>
       <div className="mt-12 pb-12">
