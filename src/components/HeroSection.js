@@ -5,15 +5,15 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import avatar from "../assests/avatar.png";
 import virtualImage from "../assests/virtual.png";
-import img3 from "../assests/img3.png";
+
 import img4 from "../assests/img4.png";
 import img5 from "../assests/img5.png";
 import img7 from "../assests/img7.png";
-import logo from '../assests/logo.png';
+
 import img8 from '../assests/homepage2.svg';
 
 const HeroSection = () => {
-  const images = [img8, virtualImage, img3, img4, img5, img7,];
+  const images = [img8, virtualImage, img4, img5, img7,];
 
   const settings = {
     dots: true,
